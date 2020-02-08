@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'open-nearby-restaurants';
+
+  restaurantListProviders: string[] = ['yelp', 'google-maps', 'trip-advisor'];
+  withoutYelp: string[] = ['google-maps', 'trip-advisor'];
+  filterOutYelp = false;
+
 }
