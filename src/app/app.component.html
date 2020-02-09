@@ -1,19 +1,36 @@
-<h1>Hello world</h1>
+<div class="main-container">
+  <app-header></app-header>
+  <div class="content-container">
+    <div class="content-area">
+      <h1>Hello world</h1>
 
-<div *ngIf="filterOutYelp">
-  <ul>
-    <li *ngFor="let provider of withoutYelp">
-      {{ provider }}
-    </li>
-  </ul>
+      <div class="clr-row">
+        <div class="clr-col-lg-6 clr-col-sm-6">
+          <div *ngIf="filterOutYelp">
+            <ul>
+              <li *ngFor="let provider of withoutYelp">
+                {{ provider }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="clr-col-lg-6 clr-col-sm-6">
+          <div *ngIf="!filterOutYelp">
+            <ul>
+              <li *ngFor="let provider of restaurantListProviders">
+                {{ provider }}
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+      <button class="btn" (click)="toggleFilterOutYelp()">Toggle Filter Yelp</button>
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
 </div>
 
-<div *ngIf="!filterOutYelp">
-  <ul>
-    <li *ngFor="let provider of restaurantListProviders">
-      {{ provider }}
-    </li>
-  </ul>
-</div>
 
-<router-outlet></router-outlet>
